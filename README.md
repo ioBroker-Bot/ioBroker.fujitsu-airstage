@@ -111,6 +111,12 @@ Für jedes konfigurierte Gerät werden folgende Datenpunkte erstellt:
     ### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
+* (S. Bott) Resolve all ioBroker repository checker errors, warnings, and suggestions
+* (S. Bott) Update Node.js requirement to >= 22
+* (S. Bott) Add and configure @iobroker/eslint-config
+* (S. Bott) Migrate to ESLint 9 with flat config
+* (S. Bott) Remove redundant testing dependencies
+* (S. Bott) Fix device model not being fetched (separate API call to avoid parameter limit)
 
 ### 0.1.1 (2026-01-03)
 * (S. Bott) Fix ioBroker repository checker errors and warnings
