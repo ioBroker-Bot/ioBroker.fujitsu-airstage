@@ -80,7 +80,9 @@ class FujitsuAirstage extends utils.Adapter {
       return;
     }
     if (!/^[A-Fa-f0-9]{12}$/.test(deviceId)) {
-      this.log.error(`Device ${name}: Invalid Device ID format. Must be 12 hex characters (MAC without colons)`);
+      this.log.error(
+        `Device ${name}: Invalid Device ID format. Must be 12 hex characters (MAC without colons)`
+      );
       return;
     }
     const deviceObj = {
@@ -142,11 +144,11 @@ class FujitsuAirstage extends utils.Adapter {
         type: "string",
         role: "text",
         states: {
-          "auto": "Auto",
-          "cool": "Cool",
-          "heat": "Heat",
-          "dry": "Dry",
-          "fan": "Fan Only"
+          auto: "Auto",
+          cool: "Cool",
+          heat: "Heat",
+          dry: "Dry",
+          fan: "Fan Only"
         },
         write: true
       },
@@ -156,11 +158,11 @@ class FujitsuAirstage extends utils.Adapter {
         type: "string",
         role: "text",
         states: {
-          "auto": "Auto",
-          "quiet": "Quiet",
-          "low": "Low",
-          "medium": "Medium",
-          "high": "High"
+          auto: "Auto",
+          quiet: "Quiet",
+          low: "Low",
+          medium: "Medium",
+          high: "High"
         },
         write: true
       },
@@ -228,10 +230,10 @@ class FujitsuAirstage extends utils.Adapter {
         type: "string",
         role: "text",
         states: {
-          "highest": "Highest",
-          "high": "High",
-          "low": "low",
-          "lowest": "lowest"
+          highest: "Highest",
+          high: "High",
+          low: "low",
+          lowest: "lowest"
         },
         write: false
       },
@@ -351,81 +353,173 @@ class FujitsuAirstage extends utils.Adapter {
         const data = response.data.value;
         await this.setState(`${device.deviceId}.online`, true, true);
         if (data.iu_onoff !== void 0) {
-          await this.setState(`${device.deviceId}.power`, parseInt(String(data.iu_onoff)) === 1, true);
+          await this.setState(
+            `${device.deviceId}.power`,
+            parseInt(String(data.iu_onoff)) === 1,
+            true
+          );
         }
         if (data.iu_op_mode !== void 0) {
-          await this.setState(`${device.deviceId}.mode`, this.mapMode(parseInt(String(data.iu_op_mode))), true);
+          await this.setState(
+            `${device.deviceId}.mode`,
+            this.mapMode(parseInt(String(data.iu_op_mode))),
+            true
+          );
         }
         if (data.iu_fan_spd !== void 0) {
-          await this.setState(`${device.deviceId}.fan_speed`, this.mapFanSpeed(parseInt(String(data.iu_fan_spd))), true);
+          await this.setState(
+            `${device.deviceId}.fan_speed`,
+            this.mapFanSpeed(parseInt(String(data.iu_fan_spd))),
+            true
+          );
         }
         if (data.iu_powerful !== void 0) {
-          await this.setState(`${device.deviceId}.powerful`, parseInt(String(data.iu_powerful)) === 1, true);
+          await this.setState(
+            `${device.deviceId}.powerful`,
+            parseInt(String(data.iu_powerful)) === 1,
+            true
+          );
         }
         if (data.iu_economy !== void 0) {
-          await this.setState(`${device.deviceId}.economy`, parseInt(String(data.iu_economy)) === 1, true);
+          await this.setState(
+            `${device.deviceId}.economy`,
+            parseInt(String(data.iu_economy)) === 1,
+            true
+          );
         }
         if (data.iu_fan_ctrl !== void 0) {
-          await this.setState(`${device.deviceId}.fan_ctrl`, parseInt(String(data.iu_fan_ctrl)) === 1, true);
+          await this.setState(
+            `${device.deviceId}.fan_ctrl`,
+            parseInt(String(data.iu_fan_ctrl)) === 1,
+            true
+          );
         }
         if (data.iu_set_tmp !== void 0) {
-          await this.setState(`${device.deviceId}.target_temperature`, parseInt(String(data.iu_set_tmp)) / 10, true);
+          await this.setState(
+            `${device.deviceId}.target_temperature`,
+            parseInt(String(data.iu_set_tmp)) / 10,
+            true
+          );
         }
         if (data.iu_indoor_tmp !== void 0) {
-          await this.setState(`${device.deviceId}.current_temperature`, (parseInt(String(data.iu_indoor_tmp)) - 5e3) / 100, true);
+          await this.setState(
+            `${device.deviceId}.current_temperature`,
+            (parseInt(String(data.iu_indoor_tmp)) - 5e3) / 100,
+            true
+          );
         }
         if (data.iu_outdoor_tmp !== void 0) {
-          await this.setState(`${device.deviceId}.outdoor_temperature`, (parseInt(String(data.iu_outdoor_tmp)) - 5e3) / 100, true);
+          await this.setState(
+            `${device.deviceId}.outdoor_temperature`,
+            (parseInt(String(data.iu_outdoor_tmp)) - 5e3) / 100,
+            true
+          );
         }
         if (data.iu_pow_cons !== void 0) {
-          await this.setState(`${device.deviceId}.power_consumption`, parseFloat(String(data.iu_pow_cons)), true);
+          await this.setState(
+            `${device.deviceId}.power_consumption`,
+            parseFloat(String(data.iu_pow_cons)),
+            true
+          );
         }
         if (data.iu_af_swg_vrt !== void 0) {
-          await this.setState(`${device.deviceId}.swing_vertical`, parseInt(String(data.iu_af_swg_vrt)) === 1, true);
+          await this.setState(
+            `${device.deviceId}.swing_vertical`,
+            parseInt(String(data.iu_af_swg_vrt)) === 1,
+            true
+          );
         }
         if (data.iu_af_inc_vrt !== void 0) {
-          await this.setState(`${device.deviceId}.vertical_increments`, parseInt(String(data.iu_af_inc_vrt)), true);
+          await this.setState(
+            `${device.deviceId}.vertical_increments`,
+            parseInt(String(data.iu_af_inc_vrt)),
+            true
+          );
         }
         if (data.iu_af_dir_vrt !== void 0) {
-          await this.setState(`${device.deviceId}.vertical_direction`, this.mapVerticalDirection(parseInt(String(data.iu_af_dir_vrt))), true);
+          await this.setState(
+            `${device.deviceId}.vertical_direction`,
+            this.mapVerticalDirection(parseInt(String(data.iu_af_dir_vrt))),
+            true
+          );
         }
         if (data.iu_af_dir_hrz !== void 0) {
-          await this.setState(`${device.deviceId}.horizontal_direction`, parseInt(String(data.iu_af_dir_hrz)), true);
+          await this.setState(
+            `${device.deviceId}.horizontal_direction`,
+            parseInt(String(data.iu_af_dir_hrz)),
+            true
+          );
         }
         if (data.iu_af_swg_hrz !== void 0) {
-          await this.setState(`${device.deviceId}.swing_horizontal`, parseInt(String(data.iu_af_swg_hrz)) === 1, true);
+          await this.setState(
+            `${device.deviceId}.swing_horizontal`,
+            parseInt(String(data.iu_af_swg_hrz)) === 1,
+            true
+          );
         }
         if (data.iu_hmn_det !== void 0) {
-          await this.setState(`${device.deviceId}.human_detection`, parseInt(String(data.iu_hmn_det)) === 1, true);
+          await this.setState(
+            `${device.deviceId}.human_detection`,
+            parseInt(String(data.iu_hmn_det)) === 1,
+            true
+          );
         }
         if (data.iu_hmn_det_auto_save !== void 0) {
-          await this.setState(`${device.deviceId}.human_detection_auto_save`, parseInt(String(data.iu_hmn_det_auto_save)) === 1, true);
+          await this.setState(
+            `${device.deviceId}.human_detection_auto_save`,
+            parseInt(String(data.iu_hmn_det_auto_save)) === 1,
+            true
+          );
         }
         if (data.ou_low_noise !== void 0) {
-          await this.setState(`${device.deviceId}.outdoor_low_noise`, parseInt(String(data.ou_low_noise)) === 1, true);
+          await this.setState(
+            `${device.deviceId}.outdoor_low_noise`,
+            parseInt(String(data.ou_low_noise)) === 1,
+            true
+          );
         }
         if (data.iu_wifi_led !== void 0) {
-          await this.setState(`${device.deviceId}.wifi_led`, parseInt(String(data.iu_wifi_led)) === 1, true);
+          await this.setState(
+            `${device.deviceId}.wifi_led`,
+            parseInt(String(data.iu_wifi_led)) === 1,
+            true
+          );
         }
         if (data.iu_min_heat !== void 0) {
-          await this.setState(`${device.deviceId}.min_heat`, parseInt(String(data.iu_min_heat)) === 1, true);
+          await this.setState(
+            `${device.deviceId}.min_heat`,
+            parseInt(String(data.iu_min_heat)) === 1,
+            true
+          );
         }
       } else {
-        this.log.warn(`No data received from device ${device.name} or error code: ${((_a = response.data) == null ? void 0 : _a.error) || ((_b = response.data) == null ? void 0 : _b.result)}`);
-        this.log.debug(`BaseUrl: ${device.baseUrl}/GetParam -- Payload: ${JSON.stringify(payload)}`);
+        this.log.warn(
+          `No data received from device ${device.name} or error code: ${((_a = response.data) == null ? void 0 : _a.error) || ((_b = response.data) == null ? void 0 : _b.result)}`
+        );
+        this.log.debug(
+          `BaseUrl: ${device.baseUrl}/GetParam -- Payload: ${JSON.stringify(payload)}`
+        );
         this.log.debug(`Response-Data: ${JSON.stringify(response.data)}`);
         await this.setState(`${device.deviceId}.online`, false, true);
       }
     } catch (error) {
-      this.log.error(`Error updating device ${device.name}: ${error instanceof Error ? error.message : String(error)}`);
-      this.log.debug(`BaseUrl: ${device.baseUrl}/GetParam -- Payload: ${JSON.stringify(payload)}`);
+      this.log.error(
+        `Error updating device ${device.name}: ${error instanceof Error ? error.message : String(error)}`
+      );
+      this.log.debug(
+        `BaseUrl: ${device.baseUrl}/GetParam -- Payload: ${JSON.stringify(payload)}`
+      );
       await this.setState(`${device.deviceId}.online`, false, true);
     }
   }
   async onStateChange(id, state) {
-    if (!state || state.ack) return;
+    if (!state || state.ack) {
+      return;
+    }
     const parts = id.split(".");
-    if (parts.length < 4) return;
+    if (parts.length < 4) {
+      return;
+    }
     const deviceId = parts[2];
     const stateName = parts[3];
     const device = this.devices.find((d) => d.deviceId === deviceId);
@@ -436,9 +530,13 @@ class FujitsuAirstage extends utils.Adapter {
     try {
       await this.sendCommand(device, stateName, state.val);
       await this.setState(id, state.val, true);
-      this.log.debug(`Command sent to ${device.name}: ${stateName} = ${state.val}`);
+      this.log.debug(
+        `Command sent to ${device.name}: ${stateName} = ${state.val}`
+      );
     } catch (error) {
-      this.log.error(`Error sending command to ${device.name}: ${error instanceof Error ? error.message : String(error)}`);
+      this.log.error(
+        `Error sending command to ${device.name}: ${error instanceof Error ? error.message : String(error)}`
+      );
     }
   }
   async sendCommand(device, command, value) {
@@ -449,15 +547,18 @@ class FujitsuAirstage extends utils.Adapter {
         paramName = "iu_onoff";
         paramValue = value ? 1 : 0;
         break;
-      case "target_temperature":
+      case "target_temperature": {
         const temp = parseInt(String(value));
         if (temp >= 16 && temp <= 30) {
           paramName = "iu_set_tmp";
           paramValue = temp * 10;
         } else {
-          throw new Error(`Invalid temperature: ${temp}. Must be between 16-30\xB0C`);
+          throw new Error(
+            `Invalid temperature: ${temp}. Must be between 16-30\xB0C`
+          );
         }
         break;
+      }
       case "mode":
         paramName = "iu_op_mode";
         paramValue = this.mapModeReverse(String(value));
@@ -516,8 +617,12 @@ class FujitsuAirstage extends utils.Adapter {
       timeout: 5e3
     });
     if (response.data && response.data.result !== "OK") {
-      this.log.debug(`BaseUrl: ${device.baseUrl}/GetParam -- Payload: ${JSON.stringify(payload)}`);
-      throw new Error(`Command failed: ${response.data.error || response.data.result}`);
+      this.log.debug(
+        `BaseUrl: ${device.baseUrl}/GetParam -- Payload: ${JSON.stringify(payload)}`
+      );
+      throw new Error(
+        `Command failed: ${response.data.error || response.data.result}`
+      );
     }
     const timeout = setTimeout(() => this.updateDeviceData(device), 1e3);
     this.updateTimeouts.push(timeout);
@@ -534,11 +639,11 @@ class FujitsuAirstage extends utils.Adapter {
   }
   mapModeReverse(mode) {
     const modes = {
-      "auto": 0,
-      "cool": 1,
-      "dry": 2,
-      "fan": 3,
-      "heat": 4
+      auto: 0,
+      cool: 1,
+      dry: 2,
+      fan: 3,
+      heat: 4
     };
     return modes[mode] || 0;
   }
@@ -554,11 +659,11 @@ class FujitsuAirstage extends utils.Adapter {
   }
   mapFanSpeedReverse(speed) {
     const speeds = {
-      "auto": 0,
-      "quiet": 1,
-      "low": 2,
-      "medium": 3,
-      "high": 4
+      auto: 0,
+      quiet: 1,
+      low: 2,
+      medium: 3,
+      high: 4
     };
     return speeds[speed] || 0;
   }
@@ -578,7 +683,9 @@ class FujitsuAirstage extends utils.Adapter {
         await this.updateDeviceData(device);
       }
     }, interval);
-    this.log.info(`Started polling with ${interval / 1e3}s interval for ${this.devices.length} device(s)`);
+    this.log.info(
+      `Started polling with ${interval / 1e3}s interval for ${this.devices.length} device(s)`
+    );
   }
   onUnload(callback) {
     try {
@@ -590,7 +697,7 @@ class FujitsuAirstage extends utils.Adapter {
         clearTimeout(timeout);
       }
       this.updateTimeouts = [];
-      this.setState("info.connection", false, true);
+      void this.setState("info.connection", false, true);
       this.log.info("Fujitsu Airstage adapter stopped");
       callback();
     } catch {

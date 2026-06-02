@@ -34,8 +34,7 @@ Dieser Adapter ermöglicht die Steuerung von Fujitsu Airstage Klimaanlagen über
 
 ### Installation
 
-1. Adapter über die ioBroker Admin-Oberfläche installieren
-2. Alternativ: `npm install iobroker.fujitsu-airstage`
+Adapter über die ioBroker Admin-Oberfläche installieren
 
 ### Konfiguration
 
