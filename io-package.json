@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "fujitsu-airstage",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "news": {
+      "0.2.4": {
+        "en": "(S. Bott) Fix power_consumption role to match cumulative Wh value, correct mistranslated IP/Name/Device ID labels, fix info.connection name on existing installations",
+        "de": "(S. Bott) Rolle von power_consumption korrigiert (kumulierter Wh-Wert), fehlerhafte Uebersetzungen fuer IP/Name/Geraete-ID behoben, info.connection-Name bei bestehenden Installationen korrigiert",
+        "ru": "(S. Bott) Исправлена роль power_consumption (совокупное значение в Втч), исправлены неверные переводы IP/Имя/ID устройства, исправлено имя info.connection на существующих установках",
+        "pt": "(S. Bott) Correcao da funcao power_consumption (valor cumulativo em Wh), traducoes incorretas de IP/Nome/ID do dispositivo corrigidas, nome de info.connection corrigido em instalacoes existentes",
+        "nl": "(S. Bott) Rol van power_consumption gecorrigeerd (cumulatieve Wh-waarde), verkeerde vertalingen voor IP/Naam/Apparaat-ID hersteld, info.connection-naam gecorrigeerd bij bestaande installaties",
+        "fr": "(S. Bott) Correction du role de power_consumption (valeur cumulee en Wh), traductions erronees IP/Nom/ID de l'appareil corrigees, nom de info.connection corrige pour les installations existantes",
+        "it": "(S. Bott) Corretto il ruolo di power_consumption (valore cumulativo in Wh), corrette le traduzioni errate di IP/Nome/ID dispositivo, corretto il nome di info.connection sulle installazioni esistenti",
+        "es": "(S. Bott) Correccion del rol de power_consumption (valor acumulado en Wh), traducciones incorrectas de IP/Nombre/ID del dispositivo corregidas, nombre de info.connection corregido en instalaciones existentes",
+        "pl": "(S. Bott) Poprawiono role power_consumption (skumulowana wartosc Wh), naprawiono bledne tlumaczenia IP/Nazwa/ID urzadzenia, poprawiono nazwe info.connection w istniejacych instalacjach",
+        "uk": "(S. Bott) Виправлено роль power_consumption (сукупне значення у Вт·год), виправлено помилкові переклади IP/Назва/ID пристрою, виправлено ім'я info.connection на існуючих установках",
+        "zh-cn": "(S. Bott) 修复power_consumption角色（累计Wh值），修正IP/名称/设备ID的错误翻译，修复现有安装中info.connection的名称"
+      },
       "0.2.3": {
         "en": "(S. Bott) Fix PR review findings: preserve custom object settings on restart, avoid overlapping polling calls, correct state roles, clean up i18n",
         "de": "(S. Bott) PR-Review-Befunde behoben: Objekteinstellungen bleiben bei Neustart erhalten, keine ueberlappenden Abfragen mehr, State-Rollen korrigiert, i18n bereinigt",
@@ -80,19 +93,6 @@
         "pl": "(S. Bott) Naprawa human_detection_auto_save: write=true dla roli switch\n(S. Bott) Naprawiono błędy sprawdzania repozytorium (E0036, E5019)",
         "uk": "(S. Bott) Виправлено human_detection_auto_save: write=true для ролі switch\n(S. Bott) Виправлено помилки перевірки репозиторію (E0036, E5019)",
         "zh-cn": "(S. Bott) 修复human_detection_auto_save: 设置write=true匹配开关角色\n(S. Bott) 修复仓库检查器错误 (E0036, E5019)"
-      },
-      "0.1.5": {
-        "en": "(S. Bott) Fix 'no existing object' warnings when MAC address entered in lowercase\n(S. Bott) Fix typo: info.connected → info.connection",
-        "de": "(S. Bott) 'no existing object'-Warnungen bei Kleinschreibung der MAC-Adresse behoben\n(S. Bott) Tippfehler behoben: info.connected → info.connection",
-        "ru": "(S. Bott) Исправлены предупреждения 'no existing object' при вводе MAC-адреса строчными буквами\n(S. Bott) Исправлена опечатка: info.connected → info.connection",
-        "pt": "(S. Bott) Corrigidos avisos 'no existing object' com endereço MAC em minúsculas\n(S. Bott) Correção de erro de digitação: info.connected → info.connection",
-        "nl": "(S. Bott) 'no existing object'-waarschuwingen opgelost bij MAC-adres in kleine letters\n(S. Bott) Typefout gecorrigeerd: info.connected → info.connection",
-        "fr": "(S. Bott) Correction des avertissements 'no existing object' avec adresse MAC en minuscules\n(S. Bott) Correction d'une faute de frappe: info.connected → info.connection",
-        "it": "(S. Bott) Corretti avvisi 'no existing object' con indirizzo MAC in minuscolo\n(S. Bott) Correzione di un errore di battitura: info.connected → info.connection",
-        "es": "(S. Bott) Corrección de avisos 'no existing object' con dirección MAC en minúsculas\n(S. Bott) Corrección de error tipográfico: info.connected → info.connection",
-        "pl": "(S. Bott) Naprawiono ostrzeżenia 'no existing object' przy adresie MAC małymi literami\n(S. Bott) Naprawiono literówkę: info.connected → info.connection",
-        "uk": "(S. Bott) Виправлено попередження 'no existing object' при введенні MAC-адреси малими літерами\n(S. Bott) Виправлено друкарську помилку: info.connected → info.connection",
-        "zh-cn": "(S. Bott) 修复输入小写MAC地址时的'no existing object'警告\n(S. Bott) 修复拼写错误: info.connected → info.connection"
       }
     },
     "titleLang": {

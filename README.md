@@ -118,7 +118,7 @@ The following data points are created for each configured device:
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.2.4 (2026-09-20)
 * (S. Bott) Fix `power_consumption` role mismatch with its unit (`value.power.consumed` → `value.energy.consumed`, matching the cumulative Wh value reported by the device)
 * (S. Bott) Fix missing `Name`/`Device ID` i18n keys in admin table, and incorrect German placeholder text in 9 non-German languages
 * (S. Bott) Fix `info.connection` object name not being corrected on existing installations

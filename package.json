@@ -1,6 +1,6 @@
 {
   "name": "iobroker.fujitsu-airstage",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Controls Fujitsu Airstage air conditioners",
   "author": {
     "name": "S. Bott",
