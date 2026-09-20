@@ -92,7 +92,7 @@ The following data points are created for each configured device:
 |------------|------|-------------|
 | `current_temperature` | number | Current room temperature |
 | `outdoor_temperature` | number | Outdoor temperature |
-| `power_consumption` | number | Power consumption in watts |
+| `power_consumption` | number | Cumulative energy consumption in Wh |
 | `vertical_direction` | string | Vertical airflow direction |
 | `vertical_increments` | number | Vertical airflow increments |
 | `horizontal_direction` | number | Horizontal airflow direction |
@@ -119,7 +119,7 @@ The following data points are created for each configured device:
     ### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
-* (S. Bott) Fix `power_consumption` unit mismatch with its role (Wh → W)
+* (S. Bott) Fix `power_consumption` role mismatch with its unit (`value.power.consumed` → `value.energy.consumed`, matching the cumulative Wh value reported by the device)
 * (S. Bott) Fix missing `Name`/`Device ID` i18n keys in admin table, and incorrect German placeholder text in 9 non-German languages
 * (S. Bott) Fix `info.connection` object name not being corrected on existing installations
 

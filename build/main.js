@@ -209,10 +209,10 @@ class FujitsuAirstage extends utils.Adapter {
       },
       {
         id: "power_consumption",
-        name: "Power Consumption",
+        name: "Energy Consumption",
         type: "number",
-        role: "value.power.consumed",
-        unit: "W",
+        role: "value.energy.consumed",
+        unit: "Wh",
         write: false
       },
       {
