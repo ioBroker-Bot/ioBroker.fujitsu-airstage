@@ -1,6 +1,8 @@
 {
     "Fujitsu Airstage Devices": "Пристрої Fujitsu Airstage",
-    "IP": "IP-Adresse",
+    "IP": "IP-адреса",
     "MAC address without colons": "MAC-адреса без двокрапок",
-    "Poll interval (seconds)": "Інтервал опитування (секунди)"
+    "Poll interval (seconds)": "Інтервал опитування (секунди)",
+    "Name": "Назва",
+    "Device ID": "ID пристрою"
 }

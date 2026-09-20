@@ -1,6 +1,8 @@
 {
     "Fujitsu Airstage Devices": "Fujitsu Airstage apparaten",
-    "IP": "IP-Adresse",
+    "IP": "IP-adres",
     "MAC address without colons": "MAC-adres zonder dubbele punten",
-    "Poll interval (seconds)": "Pollinginterval (seconden)"
+    "Poll interval (seconds)": "Pollinginterval (seconden)",
+    "Name": "Naam",
+    "Device ID": "Apparaat-ID"
 }

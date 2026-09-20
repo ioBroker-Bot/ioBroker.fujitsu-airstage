@@ -49,7 +49,7 @@ class FujitsuAirstage extends utils.Adapter {
       },
       native: {}
     });
-    await this.setObjectNotExistsAsync("info.connection", {
+    await this.extendObject("info.connection", {
       type: "state",
       common: {
         name: "Device or service connected",
@@ -212,7 +212,7 @@ class FujitsuAirstage extends utils.Adapter {
         name: "Power Consumption",
         type: "number",
         role: "value.power.consumed",
-        unit: "Wh",
+        unit: "W",
         write: false
       },
       {

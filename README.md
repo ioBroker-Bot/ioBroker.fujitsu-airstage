@@ -118,6 +118,10 @@ The following data points are created for each configured device:
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (S. Bott) Fix `power_consumption` unit mismatch with its role (Wh → W)
+* (S. Bott) Fix missing `Name`/`Device ID` i18n keys in admin table, and incorrect German placeholder text in 9 non-German languages
+* (S. Bott) Fix `info.connection` object name not being corrected on existing installations
 
 ### 0.2.3 (2026-08-25)
 * (S. Bott) Fix PR review findings: preserve custom object settings on restart, avoid overlapping polling calls, correct state roles
